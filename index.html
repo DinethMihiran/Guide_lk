@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Field Guide — Honest picks, plainly explained</title>
+  <meta name="description" content="Foods, electronics, gadgets, and home products — reviewed and explained, with links to buy." />
+
+  <!-- Fonts: display (Archivo), body (Source Serif 4), utility (IBM Plex Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================ HEADER / NAV ============================ -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a href="index.html" class="site-logo">Field<span>Guide</span></a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" class="is-active">Home</a>
+        <!-- Category links are inserted here by main.js so this list
+             never needs manual edits when a category is added. -->
+      </nav>
+
+      <form class="search-form" id="search-form" role="search">
+        <span class="search-form__icon" aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          id="search-input"
+          name="q"
+          placeholder="Search posts, tags, categories…"
+          aria-label="Search posts"
+        />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero__eyebrow">Buying guides &amp; honest reviews</span>
+      <h1>Know what you're buying before you buy it.</h1>
+      <p>
+        Straightforward write-ups on foods, electronics, gadgets, and home
+        products — real specs, real nutrition facts, and a direct link when
+        you're ready to buy.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ CATEGORY NAV ============================ -->
+  <section class="category-strip">
+    <div class="container">
+      <nav class="category-nav" id="category-nav" aria-label="Filter by category">
+        <!-- Filled in by main.js from categories[] in data.js -->
+      </nav>
+    </div>
+  </section>
+
+  <!-- ============================ RESULTS ============================ -->
+  <main class="container">
+    <div class="results-bar">
+      <span id="results-count">Showing all posts</span>
+      <span id="active-filter-label"></span>
+    </div>
+
+    <div class="post-grid" id="post-grid">
+      <!-- Filled in by main.js -->
+    </div>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <p>&copy; 2026 Field Guide. All rights reserved.</p>
+      <p class="site-footer__disclosure">
+        As an affiliate, we may earn a commission from qualifying purchases
+        made through links on this site, at no extra cost to you.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Data first, then shared render/search helpers, then page logic -->
+  <script src="js/data.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
