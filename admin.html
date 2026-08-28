@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager — Field Guide</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <div class="admin-bar">
+    <span class="admin-bar__title">Field<span>Guide</span> — Content Manager</span>
+    <nav class="admin-bar__links">
+      <a href="index.html">← View site</a>
+      <a href="#" id="export-posts-link">Export posts.json</a>
+      <a href="#" id="export-categories-link">Export categories.json</a>
+      <a href="#" id="discard-edits-link">Discard local edits</a>
+    </nav>
+  </div>
+
+  <p class="admin-note">
+    Changes here save instantly to this browser so you can preview them on the
+    site right away. To make them permanent (and visible to anyone, on any
+    device), click <strong>Export</strong> above and use that file to replace
+    the matching file in <code>/data</code> — that's a plain data file, not
+    code, so the UI is never touched.
+  </p>
+
+  <div class="admin-layout">
+    <!-- ============================ SIDEBAR ============================ -->
+    <aside class="admin-sidebar">
+      <div class="admin-tabs">
+        <button class="admin-tab is-active" data-tab="posts">Posts</button>
+        <button class="admin-tab" data-tab="categories">Categories</button>
+      </div>
+
+      <button class="admin-new-btn" id="new-item-btn">+ New Post</button>
+
+      <div class="admin-list" id="admin-list">
+        <!-- filled in by admin.js -->
+      </div>
+    </aside>
+
+    <!-- ============================ FORM ============================ -->
+    <main class="admin-main" id="admin-main">
+      <div class="admin-empty-form">
+        Loading content…
+      </div>
+    </main>
+  </div>
+
+  <script src="data-store.js"></script>
+  <script src="render.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

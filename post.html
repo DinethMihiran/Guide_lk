@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title">Loading… — Field Guide</title>
+  <meta name="description" id="page-description" content="" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ============================ HEADER / NAV ============================ -->
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a href="index.html" class="site-logo">Field<span>Guide</span></a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <!-- Category links inserted by post.js -->
+      </nav>
+
+      <form class="search-form" action="index.html" method="get" role="search">
+        <span class="search-form__icon" aria-hidden="true">⌕</span>
+        <input type="search" name="q" placeholder="Search posts, tags, categories…" aria-label="Search posts" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- ============================ POST CONTENT ============================ -->
+  <!-- Everything below is populated by post.js based on ?id= in the URL. -->
+  <div id="post-root">
+    <p class="container" style="padding:60px 0;">Loading post…</p>
+  </div>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <p>&copy; 2026 Field Guide. All rights reserved.</p>
+      <p class="site-footer__disclosure">
+        As an affiliate, we may earn a commission from qualifying purchases
+        made through links on this site, at no extra cost to you.
+      </p>
+      <a href="admin.html" class="site-footer__admin-link">Manage content →</a>
+    </div>
+  </footer>
+
+  <script src="data-store.js"></script>
+  <script src="render.js"></script>
+  <script src="search.js"></script>
+  <script src="post.js"></script>
+</body>
+</html>

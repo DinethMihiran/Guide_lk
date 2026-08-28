@@ -1,0 +1,344 @@
+/* =================================================================
+   ADMIN TOOL STYLES
+   Deliberately plainer than the public site — this is a working
+   tool, not a page visitors see. Reuses the same color/type
+   tokens from styles.css (loaded alongside this file) so it still
+   feels like part of the same product, just in "control panel"
+   mode: a fixed sidebar list + a form pane.
+   ================================================================= */
+
+body.admin-body {
+  background: #eceae2;
+}
+
+.admin-bar {
+  background: var(--color-ink);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-bar__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+.admin-bar__title span {
+  color: var(--color-signal);
+}
+
+.admin-bar__links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.admin-bar__links a {
+  color: #fff;
+  opacity: 0.85;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+}
+
+.admin-bar__links a:hover {
+  opacity: 1;
+}
+
+.admin-note {
+  background: #fff4de;
+  border-bottom: 1px solid #e8d5a3;
+  padding: 10px 24px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #6b5106;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: calc(100vh - 100px);
+}
+
+/* ---- sidebar: list of posts / categories ---- */
+.admin-sidebar {
+  border-right: 1px solid var(--color-line);
+  padding: 18px;
+  background: #f3f1ea;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.admin-tab {
+  flex: 1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: transparent;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  padding: 8px;
+  color: var(--color-ink-soft);
+}
+
+.admin-tab.is-active {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: #fff;
+}
+
+.admin-new-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  background: var(--color-signal);
+  color: var(--color-signal-ink);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px;
+  margin-bottom: 14px;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 62vh;
+  overflow-y: auto;
+}
+
+.admin-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--color-line);
+  border-left: 4px solid var(--item-color, var(--color-line));
+  border-radius: 3px;
+  padding: 9px 10px;
+  font-size: 0.85rem;
+  color: var(--color-ink);
+}
+
+.admin-list-item:hover {
+  border-color: var(--color-ink-soft);
+}
+
+.admin-list-item.is-selected {
+  outline: 2px solid var(--color-ink);
+  outline-offset: -2px;
+}
+
+.admin-list-item__title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-list-item__meta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-ink-soft);
+  white-space: nowrap;
+}
+
+.admin-empty-list {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  padding: 10px 0;
+}
+
+/* ---- main pane: the form ---- */
+.admin-main {
+  padding: 26px 34px 60px;
+  max-width: 760px;
+}
+
+.admin-main h2 {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.admin-main__subtitle {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.admin-form-row {
+  margin-bottom: 18px;
+}
+
+.admin-form-row--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.admin-form-row label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+}
+
+.admin-form-row .field-hint {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--color-ink-soft);
+  display: block;
+  margin-top: 4px;
+}
+
+.admin-form-row input[type="text"],
+.admin-form-row input[type="url"],
+.admin-form-row input[type="date"],
+.admin-form-row input[type="color"],
+.admin-form-row select,
+.admin-form-row textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 10px 12px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.admin-form-row textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.admin-form-row input:focus,
+.admin-form-row select:focus,
+.admin-form-row textarea:focus {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 1px;
+}
+
+.admin-fieldset {
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius);
+  padding: 16px 16px 4px;
+  margin-bottom: 20px;
+}
+
+.admin-fieldset legend {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0 8px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-line);
+}
+
+.btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #000;
+}
+
+.btn-danger {
+  background: #fff;
+  border-color: #c1666b;
+  color: #a14343;
+}
+
+.btn-danger:hover {
+  background: #fdf0f0;
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--color-line);
+  color: var(--color-ink-soft);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-ink-soft);
+  color: var(--color-ink);
+}
+
+.admin-empty-form {
+  color: var(--color-ink-soft);
+  padding: 40px 0;
+  max-width: 46ch;
+}
+
+.admin-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--color-ink);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.88rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  z-index: 50;
+}
+
+.admin-toast--error {
+  background: #a14343;
+}
+
+.export-panel {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+@media (max-width: 860px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+  .admin-sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .admin-form-row--split {
+    grid-template-columns: 1fr;
+  }
+}

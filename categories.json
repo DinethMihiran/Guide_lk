@@ -1,0 +1,30 @@
+[
+  {
+    "id": "foods",
+    "name": "Foods",
+    "description": "Reviews, nutrition breakdowns, and where to buy them.",
+    "color": "#6B8F71",
+    "icon": "🌾"
+  },
+  {
+    "id": "electronics",
+    "name": "Electronics",
+    "description": "Specs, comparisons, and honest pros & cons.",
+    "color": "#4A6FA5",
+    "icon": "🔌"
+  },
+  {
+    "id": "gadgets",
+    "name": "Gadgets",
+    "description": "Small tools and accessories worth knowing about.",
+    "color": "#C1666B",
+    "icon": "🧭"
+  },
+  {
+    "id": "home",
+    "name": "Home Products",
+    "description": "Things that make a house run a little smoother.",
+    "color": "#B8862E",
+    "icon": "🏠"
+  }
+]
